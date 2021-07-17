@@ -91,6 +91,8 @@ def formatPlotBar(**kwargs):
 	"""
 
 	#if start date not provided, assume placeholder values for data, index
+	import pdb; 
+	#pdb.set_trace()
 	try:  
 		#idx = pd.date_range(kwargs['start'], kwargs['end'])#use dummy data for testing
 		s1=kwargs['s1']
@@ -159,16 +161,17 @@ def formatPlotBar(**kwargs):
 	ax.xaxis.grid(True, which="minor")
 	ax.yaxis.grid()
 
+    
 	#general beautification
     #plt.title=title     
-    import pdb; pdb.set_trace()	
 	#grab a figure object, set its title and save it to disk
 	fig=plt.gcf()
 	fig.canvas.set_window_title(title)
 	plt.tight_layout()
 	plt.savefig(title+'.png')
 	#fig.autofmt_xdate()
-	plt.show()
+	return plt
+	#plt.show()
 
 
 if __name__=='__main__'	:
